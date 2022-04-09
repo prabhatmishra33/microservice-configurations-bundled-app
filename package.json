@@ -1,0 +1,69 @@
+{
+  "name": "microservice-configurations-bundled-app",
+  "version": "1.0.0",
+  "description": "This is a sample service which gives an idea of best ethics that one can follow to maintain the service",
+  "main": "index.ts",
+  "scripts": {
+    "make-badges": "istanbul-badges-readme",
+    "start": "ts-node src/index.ts",
+    "commit": "npx git-cz",
+    "lint": "run-script-os",
+    "lint:darwin:linux": "eslint 'src/**/*.{ts,json}'",
+    "lint:win32": "eslint src/**/*.{ts,json}",
+    "lint-fix": "run-script-os",
+    "lint-fix:darwin:linux": "eslint 'src/**/*.{ts,json}' --fix",
+    "lint-fix:win32": "eslint src/**/*.{ts,json} --fix",
+    "prettier": "run-script-os",
+    "prettier-check": "run-script-os",
+    "prettier:darwin:linux": "npx prettier --write 'src/**/*.{ts,json}'",
+    "prettier-check:darwin:linux": "prettier --check 'src/**/*.{ts,json}'",
+    "prettier:win32": "npx prettier --write src/**/*.{ts,json}",
+    "prettier-check:win32": "prettier --check src/**/*.{ts,json}",
+    "test": "npm run make-badges && jest --runInBand --logHeapUsage --coverage --config ./jest.config.js",
+    "validate": "npm run lint && npm run prettier-check && npm run test",
+    "clean": "rimraf ./build",
+    "build-ts": "tsc --p ./tsconfig.json",
+    "cp-files": "cpx ./config/ ./build/config",
+    "build": "npm run validate && npm run clean && npm run build-ts && npm run cp-files",
+    "nodemon": "nodemon src/index.ts"
+  },
+  "author": "Prabhat Mishra <prabhatmishra33@ymail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/parser": "^5.18.0",
+    "cpx": "^1.5.0",
+    "eslint": "^8.13.0",
+    "git-cz": "^4.8.0",
+    "husky": "^3.0.9",
+    "istanbul-badges-readme": "^1.8.1",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "run-script-os": "^1.1.6",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run test && istanbul-badges-readme && git add 'README.md' && lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
