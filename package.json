@@ -19,7 +19,7 @@
     "prettier-check:darwin:linux": "prettier --check 'src/**/*.{ts,json}'",
     "prettier:win32": "npx prettier --write src/**/*.{ts,json}",
     "prettier-check:win32": "prettier --check src/**/*.{ts,json}",
-    "test": "npm run make-badges && jest --runInBand --logHeapUsage --coverage --config ./jest.config.js",
+    "test": "jest --runInBand --logHeapUsage --coverage --config ./jest.config.js",
     "validate": "npm run lint && npm run prettier-check && npm run test",
     "clean": "rimraf ./build",
     "build-ts": "tsc --p ./tsconfig.json",
