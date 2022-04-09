@@ -17,7 +17,7 @@ Here in this NodeJS service multiple configurations has been added to make the m
 | ![Statements](https://img.shields.io/badge/statements-Unknown%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-Unknown%25-brightgreen.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-Unknown%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-Unknown%25-brightgreen.svg?style=flat) |
 
 ## Inspiration
-I got inspiration from the Medium [article](https://medium.com/@prabhatmishra333/how-did-i-handle-my-microservices-c48acbd518f2) written by myself, giving the opensource community expose of the project tech insights.
+I got inspiration from the Medium [article](https://medium.com/@prabhatmishra333/how-did-i-handle-my-microservices-c48acbd518f2) written by myself, giving the opensource community expose of the project tech insights. Hoping other MEAN/MERN stack developers would also contribute to this, if you have made some innovation in the service and made it more easy to maintain.
 
 ## Note
 > I will continue to update this service once there are more updates or enhacements we do. Here by, I also request other developers to make this as a super-service that can be used by many projects and can be a self starter.
